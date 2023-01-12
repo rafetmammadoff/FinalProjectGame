@@ -28,6 +28,7 @@ TagManager:
   - slice4
   - fvp
   - svp
+  - telee
   layers:
   - Default
   - TransparentFX

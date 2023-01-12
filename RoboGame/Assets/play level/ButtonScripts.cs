@@ -1,3 +1,4 @@
+using CASP.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class ButtonScripts : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     public void OnPointerEnter(PointerEventData eventData)
     {
+        SoundManager.instance.Play("ui", true);
         transform.GetChild(0).gameObject.SetActive(true);
     }
 

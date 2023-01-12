@@ -1,3 +1,4 @@
+using CASP.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,9 +29,10 @@ public class tele : MonoBehaviour
     {
         if (isActive)
         {
-            if (collision.transform.CompareTag("box"))
+            if (collision.transform.CompareTag("telee"))
             {
                 teleAnim.SetTrigger("active");
+                SoundManager.instance.Play("tele", true);
                 transform.tag = "activeTele";
                 isActive= false;
             }

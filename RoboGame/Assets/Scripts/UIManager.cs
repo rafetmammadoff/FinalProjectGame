@@ -1,3 +1,4 @@
+using CASP.SoundManager;
 using DG.Tweening;
 using System;
 using System.Collections;
@@ -244,7 +245,7 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator Loading()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(16);
         HomePanel.SetActive(true);
         //HomePanel.transform.localScale = Vector3.zero;
         //HomePanel.transform.DOScale(1f, 0.4f).OnComplete(() =>
@@ -256,7 +257,7 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator LoadingSecVideo()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         secondVideoPlayer.GetComponent<VideoPlayer>().enabled = false;
         SecondVideo.GetComponent<RawImage>().enabled=false ;
         GeneralPanel.SetActive(true);

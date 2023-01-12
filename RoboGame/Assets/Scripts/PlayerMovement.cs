@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (transform.GetComponent<HoldControl>().isPicked)
             {
-                MovementSpeed = 3f;
+                MovementSpeed = 2f;
             }
             if (isMoveable && !isDead)
             {
@@ -422,7 +422,7 @@ public class PlayerMovement : MonoBehaviour
         {
             tele.Instance.teleAnim.SetTrigger("active");
             tele.Instance.isActive = false;
-
+            SoundManager.instance.Play("tele", true);
             anim.SetTrigger("dead");
             isDead= true;
             StartCoroutine(waitFailPane());
@@ -439,6 +439,7 @@ public class PlayerMovement : MonoBehaviour
             }
             blender.Instance.isActive = false;
             blender.Instance.anim.SetTrigger("deactive");
+            blender.Instance.knife.GetComponent<AudioSource>().enabled=false;
         }
 
         if (other.transform.CompareTag("box")  && HoldControl.Instance.isPicked)
